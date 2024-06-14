@@ -3,4 +3,5 @@ openai
 streamlit
 langchain-community
 chromadb
+pysqlite3-binary
 tiktoken
