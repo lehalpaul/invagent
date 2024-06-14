@@ -6,12 +6,7 @@ sys.path.append('/path/to/langchain')
 
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
-from langchain.prompts import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    MessagesPlaceholder,
-    SystemMessagePromptTemplate,
-)
+
 
 from langchain.document_loaders import CSVLoader
 from langchain.chains import ConversationalRetrievalChain
