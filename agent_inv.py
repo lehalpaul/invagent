@@ -48,9 +48,6 @@ def main():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
         
-k[[2[]]]
-
-
 def run_conversation(question):
     llm = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo-1106", streaming=True)
     loader = CSVLoader(file_path="cronicchevrolet.csv")
