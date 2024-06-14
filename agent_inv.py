@@ -208,6 +208,7 @@ AI Response: I apologize for the inconvenience. I will ensure a copy of your inv
 
 
 Context:
+    Always greet the customer,understand question first and reply according to it
   Use the provided user comments and examples to understand the customer’s needs and respond appropriately.Always ensure that responses are professional, courteous, and tailored to the specific inquiries and preferences of the customers.
   If user ask question about any other car or other than data provided,answer using the CSV uploaded .
 """
