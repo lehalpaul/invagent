@@ -3,3 +3,4 @@ openai
 streamlit
 langchain-community
 faiss-cpu
+tiktoken
