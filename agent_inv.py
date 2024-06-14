@@ -24,7 +24,7 @@ from langchain.schema.output_parser import StrOutputParser
 
 def main():
     
-    os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
+    openai.api_key=os.environ["OPENAI_API_KEY"]
     st.title("Auto Dealership AI Assistant")
 
    
