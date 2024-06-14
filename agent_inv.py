@@ -12,7 +12,7 @@ from langchain.document_loaders import CSVLoader
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import LLMChain
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.schema.runnable import RunnablePassthrough
@@ -48,7 +48,7 @@ def run_conversation(question):
     llm = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo-1106", streaming=True)
     loader = CSVLoader(file_path="cronicchevrolet.csv")
     data = loader.load()
-    vectordb = Chroma.from_documents(data, OpenAIEmbeddings())
+    vectordb = FAISS.from_documents(data, OpenAIEmbeddings())
     retriever = vectordb.as_retriever()
 
     template = """
