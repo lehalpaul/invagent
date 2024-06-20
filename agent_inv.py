@@ -55,7 +55,7 @@ def run_conversation(question):
     data = loader.load()
     vectordb = FAISS.from_documents(data, OpenAIEmbeddings())
     retriever = vectordb.as_retriever()
-template = """
+    template = """
 You are an AI assistant equipped to analyze a CSV file containing car dealership inventory data {context}. You can provide a comprehensive overview of all cars available in the inventory or perform detailed analyses on specific car models as requested. 
 """
 
