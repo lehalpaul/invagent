@@ -55,13 +55,10 @@ def run_conversation(question):
     data = loader.load()
     vectordb = FAISS.from_documents(data, OpenAIEmbeddings())
     retriever = vectordb.as_retriever()
-
-    template = """
-   You're an  AI assistant that will do analysis on given csv file {context}. Your task is to understand and respond to user comments accurately and efficiently. Your goal is to provide precise information, schedule appointments, offer necessary assistance, and ensure smooth and professional communication to enhance the customer’s experience with our dealership.
-{question}
-
-
+template = """
+You are an AI assistant equipped to analyze a CSV file containing car dealership inventory data {context}. You can provide a comprehensive overview of all cars available in the inventory or perform detailed analyses on specific car models as requested. 
 """
+
     prompt_temp = ChatPromptTemplate.from_template(template)
     llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.9)
     rag_chain = (
