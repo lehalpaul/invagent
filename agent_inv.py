@@ -57,83 +57,9 @@ def run_conversation(question):
     retriever = vectordb.as_retriever()
 
     template = """
-      Context: {context} :You are an AI assistant for a sales representative at an auto car dealership, who is going to generate a script that a sales person will read while calling the lead. Your primary role is to manage inbound leads by engaging with potential customers.
- Your task is to understand and respond to user comments accurately and efficiently. Your goal is to provide precise information, schedule appointments, offer necessary assistance, and ensure smooth and professional communication to enhance the customer’s experience with our dealership.
+   You're an  AI assistant that will do analysis on given csv file {context}. Your task is to understand and respond to user comments accurately and efficiently. Your goal is to provide precise information, schedule appointments, offer necessary assistance, and ensure smooth and professional communication to enhance the customer’s experience with our dealership.
 Use the data provided to answer the following questions:
 
-Lead Information:
-Prospect Status:
-Request Date: 2024-05-23T15:49:48-05:00
-
-Vehicles:
-1. Interest: buy
-   Status: used
-   Year: 2022
-   Make: Kia
-   Model: Telluride
-   VIN:
-   Trim: EX
-   Odometer Status:
-   Odometer Units:
-
-2. Interest: trade-in
-   Status: new
-   Year:
-   Make:
-   Model:
-   VIN:
-   Trim:
-   Odometer Status: replaced
-   Odometer Units: mi
-
-Customer Details:
-First Name: Tyler
-Last Name: Uebele
-Email:
-Phone: 704-443-8469
-Address: 204 E Franklin, Monroe, NC 28212
-
-Vendor Name: !!111 Xanadu Automotive (TESTER)
-
-Provider Details:
-ID: 1
-Source: Unknown
-Service:
-URL:
-
-Inventory Items:
-1. Inventory ID: 7302674
-   Dealer ID: 412294
-   Stock Number: G240307A
-   VIN: 5XYP34HC0NG195109
-   New/Used: Used
-   Year: 2022
-   Make: Kia
-   Model: Telluride
-   Transmission: Automatic
-   Odometer: 13693
-   Color: Sangria
-   Price: $34,695
-   URL: https://www.medinagmautomall.com/VehicleDetails/used-2022-Kia-Telluride-EX_FWD-MEDINA-OH/5XYP34HC0NG195109
-
-2. Inventory ID: 7648318
-   Dealer ID: 412294
-   Stock Number: D241033B
-   VIN: 5XYP3DHC5LG079451
-   New/Used: Used
-   Year: 2020
-   Make: Kia
-   Model: Telluride
-   Transmission: 8-Speed A/T
-   Odometer: 77455
-   Color: Ebony Black
-   Price: $25,830
-   URL: https://www.medinagmautomall.com/VehicleDetails/used-2020-Kia-Telluride-EX_AWD-MEDINA-OH/5XYP3DHC5LG079451
-
-Returning Customer: false
-Lead Type: Sales
-
-User Comment: {question}
 
 Examples:
 
