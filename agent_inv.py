@@ -55,7 +55,9 @@ def run_conversation(question):
     data = loader.load()
     vectordb = FAISS.from_documents(data, OpenAIEmbeddings())
     retriever = vectordb.as_retriever()
-    template = """ You're an  AI assistant that will do analysis on given csv file {context} and answer the user {question} based on CSV Data"""
+    template = """
+You're an AI assistant. Given the context from a CSV file, {context}, your task is to provide an accurate answer to the user's question, {question}, based on the data available in the CSV.
+"""
     prompt_temp = ChatPromptTemplate.from_template(template)
     llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.9)
     rag_chain = (
